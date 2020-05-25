@@ -24,9 +24,6 @@ class Hostess < Rack::Static
     super(app, options)
   end
 
-  def can_serve(path)
-    super(path) || gem_download_path(path) || path =~ %r{/quick/Marshal\.4\.8/.*\.gemspec.rz}
-  end
 
   def gem_download_path(path)
     Regexp.last_match(1) if path =~ %r{/gems/(.*)\.gem}
