@@ -195,9 +195,6 @@ class Version < ApplicationRecord
     self[:size]
   end
 
-  def byte_size=(size)
-    self[:size] = size.to_i
-  end
 
   def info
     [description, summary, "This rubygem does not have a description or summary."].find(&:present?)
