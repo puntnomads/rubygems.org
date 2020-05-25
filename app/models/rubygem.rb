@@ -192,9 +192,6 @@ class Rubygem < ApplicationRecord
     payload.to_xml(options.merge(root: "rubygem"))
   end
 
-  def to_param
-    name.remove(/[^#{Patterns::ALLOWED_CHARACTERS}]/)
-  end
 
   def pushable?
     new_record? || (versions.indexed.none? && not_protected?)
