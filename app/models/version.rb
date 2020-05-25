@@ -29,13 +29,6 @@ class Version < ApplicationRecord
   validate :metadata_attribute_length
 
   class AuthorType < ActiveModel::Type::String
-    def cast_value(value)
-      if value.is_a?(Array)
-        value.join(", ")
-      else
-        super
-      end
-    end
   end
   attribute :authors, AuthorType.new
 
