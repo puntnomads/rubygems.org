@@ -14,7 +14,4 @@ class UsersController < Clearance::UsersController
     end
   end
 
-  def user_params
-    params.require(:user).permit(*User::PERMITTED_ATTRS)
-  end
 end
