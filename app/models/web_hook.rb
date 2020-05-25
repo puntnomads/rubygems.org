@@ -24,9 +24,6 @@ class WebHook < ApplicationRecord
     end
   end
 
-  def global?
-    rubygem_id.blank?
-  end
 
   def success_message
     "Successfully created webhook for #{what} to #{url}"
