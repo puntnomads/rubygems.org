@@ -1,7 +1,3 @@
-function hideAnnouncement(announcement_key) {
-  createCookie(announcement_key, "hidden", 365);
-  $("#announcement").slideUp();
-}
 
 // Utility scripts from http://www.quirksmode.org/js/cookies.html
 function createCookie(name, value, days) {
