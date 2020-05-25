@@ -261,12 +261,6 @@ class Rubygem < ApplicationRecord
     versions.find_by_number_and_platform(spec.version.to_s, spec.original_platform.to_s)
   end
 
-  def find_or_initialize_version_from_spec(spec)
-    version = versions.find_or_initialize_by(number: spec.version.to_s,
-                                             platform: spec.original_platform.to_s)
-    version.rubygem = self
-    version
-  end
 
   # returns days left before the reserved namespace will be released
   # 100 + 1 days are added so that last_protected_day / 1.day = 1
