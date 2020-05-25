@@ -86,10 +86,6 @@ class RackAttackTest < ActionDispatch::IntegrationTest
     expo_exceeding_limit.times { Rack::Attack.cache.count("#{scope}:#{@ip_address}", expo_limit_period) }
   end
 
-  def encode(username, password)
-    ActionController::HttpAuthentication::Basic
-      .encode_credentials(username, password)
-  end
 
   def expected_retry_after(level)
     now = Time.now.to_i
