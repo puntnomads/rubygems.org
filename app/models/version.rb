@@ -314,9 +314,6 @@ class Version < ApplicationRecord
     command
   end
 
-  def authors_array
-    authors.split(",").flatten
-  end
 
   def sha256_hex
     Version._sha256_hex(sha256) if sha256
