@@ -10,9 +10,5 @@ module RuboCop::Cop
       (send (...) :try! (...))
     PATTERN
 
-    def on_send(node)
-      return unless try_call?(node) || try_bang_call?(node)
-      add_offense(node)
-    end
   end
 end
